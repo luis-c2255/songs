@@ -167,7 +167,7 @@ def show_ranking():
             item = items[i]
             st.image(item["image"], width=200)
             st.markdown(f"### {medals[i]} {item['name']}")
-            label = "times listened" if category == "Songs" else "min"
+            label = "times listened" if category == "Songs" else "mins"
             st.markdown(f"⏱️ **{item['minutes']} {label}**")
 
     st.write("---")
@@ -183,7 +183,7 @@ def show_ranking():
             st.image(item["image"], width=90)
             st.markdown(f"**{item['name']}**")
         with col3:
-            label = "times listened" if category == "Songs" else "min"
+            label = "times listened" if category == "Songs" else "mins"
             st.markdown(f"⏱️ {item['minutes']} {label}")
         st.write("---")
 
@@ -238,7 +238,7 @@ def show_summary():
             with top3_cols[i]:
                 st.image(data["image"], width=100)
                 st.markdown(f"### {medals[i]} {name}")
-                label = "times listened" if category == "Songs" else "min"
+                label = "times listened" if category == "Songs" else "mins"
                 st.markdown(f"⏱️ **{data['minutes']} {label}**")
 
         st.write(" ")
@@ -253,8 +253,8 @@ def show_summary():
                 st.image(data["image"], width=50)
                 st.markdown(f"**{name}**")
             with col3:
-                label = "times listened" if category == "Songs" else "min"
-                st.markdown(f"⏱️ {data['m']} {label}")
+                label = "times listened" if category == "Songs" else "mins"
+                st.markdown(f"⏱️ {data['minutes']} {label}")
             st.write("---")
 
         st.write("---")
@@ -283,7 +283,7 @@ def show_add_data():
         with col3:
             uploaded = st.file_uploader(f"Song #{i+1} image", type=["png", "jpg", "jpeg"], key=f"song_img_{i}")
         image = f"https://picsum.photos/seed/ns{i}/100/100"
-        songs.append({"name": name, "times": mins, "image": image, "uploaded": uploaded})
+        songs.append({"name": name, "minutes": mins, "image": image, "uploaded": uploaded})
     st.write(" ")
     st.subheader("🎤 Artists")
     artists = []
